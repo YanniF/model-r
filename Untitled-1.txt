@@ -5,6 +5,7 @@
     - cor texto
     - cor clara
 - imagens na pasta raiz
+
 - navegacao (em todas as páginas)
   - logo
   - navbar [C]
