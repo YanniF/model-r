@@ -4,9 +4,8 @@ Personalize o veículo dos seus sonhos.
 
 
 ## Instalação
-Este é um projeto React.
-Para o rodar no seu computador, execute os seguintes comandos os seguintes comandos:
-**É preciso ter o [Node]() instalado**
+Este é um projeto React. Então para o rodar no seu computador, execute os seguintes passos:
+**É preciso ter o [Node](https://nodejs.org/en/) instalado**
 
 
 Para baixar o projeto, rode:
