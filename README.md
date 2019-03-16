@@ -10,7 +10,7 @@ Para o rodar no seu computador, execute os seguintes comandos os seguintes coman
 
 
 Para baixar o projeto, rode:
-### `git clone ---------`
+### `git clone https://github.com/YanniF/model-r.git`
 
 Na pasta do projeto, execute:
 ### `npm install`
