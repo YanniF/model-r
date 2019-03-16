@@ -1,0 +1,51 @@
+- css geral
+  - fonte
+  - cores
+    - cor destaque
+    - cor texto
+    - cor clara
+- imagens na pasta raiz
+- navegacao (em todas as páginas)
+  - logo
+  - navbar [C]
+    - navbar item [C]
+- página inicial
+  - texto 
+  - imagem do carro
+  - botão seta [C]
+  - info geral [C]
+- página escolha (motor e cor)
+  - imagem esquerda [C]
+    - motor 
+      - imagem
+    - cor
+      - imagem
+      - texto
+  - opções direita  [C] *não falar esquerda ou direta por causa da versão mobile
+    - motor 
+      - tiulo
+      - opção [C]
+    - cor
+      - titulo
+      - texto
+      - cor
+  - rodape [C]
+    - total
+    - modelo
+    - informação motor
+    - cor
+    - roda
+    - botão seta [C]
+  - página escolha (rodas)
+    - titulo 
+    - rodas [C]
+      - roda [C]
+        - imagem
+        - texto
+- página final
+  - imagem 
+  - tiulo
+  - descricao
+  - botao
+
+  
