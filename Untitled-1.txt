@@ -5,16 +5,16 @@
     - cor texto
     - cor clara
 - imagens na pasta raiz
-
 - navegacao (em todas as páginas)
   - logo
   - navbar [C]
     - navbar item [C]
+
 - página inicial
   - texto 
   - imagem do carro
   - botão seta [C]
-  - info geral [C]
+  - info geral
 - página escolha (motor e cor)
   - imagem esquerda [C]
     - motor 

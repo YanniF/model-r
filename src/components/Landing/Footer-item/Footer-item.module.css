@@ -1,0 +1,22 @@
+.footerItem {
+  margin-bottom: 1rem;
+  padding: 2px;
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.number,
+.abbr {
+  font-weight: 500;
+  color: var(--color-primary);
+}
+
+.number {
+  font-size: 2.625rem;
+  margin-right: .5rem;
+}
+
+.description {
+  margin: 0;
+  line-height: 0;
+  letter-spacing: 2px;
+}

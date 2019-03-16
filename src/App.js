@@ -12,11 +12,11 @@ class App extends Component {
         <div style={{ margin: '0 5%' }}>
           <Layout>
             <Switch>
-              <Route path="/iq" exact component={Soon} />
-              <Route path="/mobi" exact component={Soon} />
-              <Route path="/charlie" exact component={Soon} />
-              <Route path="/italy" exact component={Soon} />
-              <Route path="/" exact component={Landing} />
+              <Route path="/iq" component={Soon} />
+              <Route path="/mobi" component={Soon} />
+              <Route path="/charlie" component={Soon} />
+              <Route path="/italy" component={Soon} />
+              <Route path="/" component={Landing} />
             </Switch>
           </Layout>
         </div>

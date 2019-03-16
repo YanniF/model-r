@@ -1,0 +1,51 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: -70px;
+  margin-bottom: -100px;
+  opacity: 0;
+  animation: fade-in .8s ease-in forwards;
+}
+
+.heroTitle {
+  align-self: flex-start;
+  margin-left: 15rem;
+  margin-bottom: -4rem;
+}
+
+.heroTitle p {
+  margin: 0 0 0 5px;
+  font-size: 1.875rem;
+  color: var(--color-primary);
+  letter-spacing: .8rem;  
+}
+
+.heroTitle h1 {
+  margin: 0;
+  font-size: 9.375rem;
+  font-weight: 300;
+  letter-spacing: .9rem;
+  line-height: 9rem;
+}
+
+.heroTitle span {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.footer {
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 10;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
