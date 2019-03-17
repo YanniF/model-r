@@ -11,11 +11,11 @@ const navigation = () => (
     <nav className={style.navigation}>
       <NavLink to="/"><img src={logo} alt="Red Venture logo" /></NavLink>
       <ul>
-        <NavigationItem link="/" exact>Model R</NavigationItem>
-        <NavigationItem link="/iq" exact>Model IQ</NavigationItem>
-        <NavigationItem link="/mobi" exact>Model Mobi</NavigationItem>
-        <NavigationItem link="/charlie" exact>Model Charlie</NavigationItem>
-        <NavigationItem link="/italy" exact>Model Italy</NavigationItem>
+        <NavigationItem link="/modelr">Model R</NavigationItem>
+        <NavigationItem link="/iq">Model IQ</NavigationItem>
+        <NavigationItem link="/mobi">Model Mobi</NavigationItem>
+        <NavigationItem link="/charlie">Model Charlie</NavigationItem>
+        <NavigationItem link="/italy">Model Italy</NavigationItem>
       </ul>
     </nav>
   </Auxiliar>

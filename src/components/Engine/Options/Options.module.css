@@ -1,0 +1,13 @@
+.options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 70%;  
+  width: 50%;
+}
+
+.options h2 {
+  margin: 0;
+  font-size: 2.8125rem;
+  font-weight: 300;
+}

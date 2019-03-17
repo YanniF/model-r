@@ -14,5 +14,6 @@ body {
   padding: 0;
   box-sizing: border-box;
   font-family: 'Saira Condensed', sans-serif;    
-  color: var(--color-text);
+  color: var(--color-text);  
+  letter-spacing: 2px;
 }

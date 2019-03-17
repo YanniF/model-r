@@ -9,12 +9,12 @@
   - logo
   - navbar [C]
     - navbar item [C]
-
 - página inicial
   - texto 
   - imagem do carro
   - botão seta [C]
   - info geral
+
 - página escolha (motor e cor)
   - imagem esquerda [C]
     - motor 

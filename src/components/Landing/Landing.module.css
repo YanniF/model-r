@@ -42,6 +42,8 @@
   display: flex;
   justify-content: space-between;
   z-index: 10;
+  opacity: 0;
+  animation: fade-in .8s .8s ease-in forwards;
 }
 
 @keyframes fade-in {
