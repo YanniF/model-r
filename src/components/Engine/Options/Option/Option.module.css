@@ -1,10 +1,18 @@
 .option {
   box-sizing: border-box;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   padding: 2rem;
   font-size: 1.375rem;
   font-weight: 300; 
   background-color: #f7f9fa;
+  cursor: pointer;
+  opacity: .6;
+  filter: grayscale(1);
+  transition: all .3s ease-in;
 }
 
 .option p {  
@@ -27,11 +35,17 @@
 }
 
 .price {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  font-weight: 500;
+  color: var(--color-primary);
   visibility: hidden;
+  z-index: 50;
 }
 
 .select {
-  position: absolute;
+  position: relative;
   width: 22px;
   height: 22px;
   border-radius: 50%;
@@ -40,6 +54,18 @@
   transition: all .3s ease-in;
 }
 
-.select:hover {
+.selected,
+.option:hover {
+  opacity: 1;
+  filter: grayscale(0)
+}
+
+.option:hover .select,
+.selected .select {
   background-color: var(--color-primary);
+}
+
+.selected .price,
+.option:hover .price {
+  visibility: visible;
 }

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import ImageCar from '../../components/ImageCar/ImageCar';
 import Auxiliar from '../../hoc/Auxliar/Auxiliar';
-import Button from '../../components/UI/Button/Button';
 import Options from '../../components/Engine/Options/Options';
+import Footer from '../../components/Footer/Footer';
 import style from './Engine.module.css';
 
 export class Engine extends Component {
@@ -27,7 +26,7 @@ export class Engine extends Component {
     let options = null;
 
     if (this.state.engine) {
-      image = <figure className={style.figure}><ImageCar source={this.state.engine[0].image} /></figure>
+      image = <figure className={style.figure}><img src={this.state.engine[0].image} alt="Car" /></figure>
       options = <Options className={style.options} engineInfo={this.state.engine} />
     }
 
@@ -37,9 +36,7 @@ export class Engine extends Component {
           {image}
           {options}
         </section>
-        <footer className={style.footer}>
-          <Button text="NEXT" />
-        </footer>
+        <Footer />
       </Auxiliar>
     )
   }

@@ -1,0 +1,30 @@
+.footer {
+  position: relative;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+.footer img {
+  width: 1.4rem;
+}
+
+.footer span:not(:first-of-type) {
+  font-size: 1.125rem;
+}
+
+.price {
+  display: block;
+  font-size: 2rem;
+  color: var(--color-primary);
+}
+
+.type {
+  color: var(--color-primary);
+}
+
+.hidden {
+  opacity: 0;
+}

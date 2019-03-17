@@ -5,6 +5,8 @@
   height: 100vh;
   margin-top: -70px;
   margin-bottom: -100px;
+  opacity: 0;
+  animation: fade-in .8s ease-in forwards;
 }
 
 .figure  {
@@ -12,6 +14,8 @@
   text-align: center;
 }
 
-.footer {
-  
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
 }
