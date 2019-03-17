@@ -10,7 +10,8 @@ export class Engine extends Component {
 
   state = {
     engine: null,
-    price: 0
+    price: 0,
+    selected: 1
   }
 
   componentDidMount() {
@@ -21,13 +22,32 @@ export class Engine extends Component {
       .catch(err => console.error(err));
   }
 
+  optionClickedHandler = id => {
+    this.setState({ selected: id })
+  }
+
   render() {
     let image = null;
     let options = null;
+    let footer = null;
 
     if (this.state.engine) {
-      image = <figure className={style.figure}><img src={this.state.engine[0].image} alt="Car" /></figure>
-      options = <Options className={style.options} engineInfo={this.state.engine} />
+      let selected = this.state.selected - 1;
+
+      image = <figure className={style.figure}><img src={this.state.engine[this.state.selected - 1].image} alt="Car" /></figure>
+      options = (
+        <Options 
+          className={style.options} 
+          engineInfo={this.state.engine} 
+          optionClicked={this.optionClickedHandler}
+          selected={this.state.selected} />
+      )
+      footer = (
+        <Footer 
+          price={this.state.price + this.state.engine[selected].price}
+          kwh={this.state.engine[selected].kwh}
+          type={this.state.engine[selected].type} />
+      )
     }
 
     return (
@@ -36,7 +56,7 @@ export class Engine extends Component {
           {image}
           {options}
         </section>
-        <Footer />
+        {footer}        
       </Auxiliar>
     )
   }

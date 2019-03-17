@@ -4,7 +4,7 @@ import style from './Option.module.css';
 
 const Option = props => {
     
-  const selected = props.selected ? style.selected : null;
+  let selected = props.selectedEngine === props.info.id ? style.selected : null;
 
   return (
     <div className={style.option + " " + selected} onClick={props.clicked}>
