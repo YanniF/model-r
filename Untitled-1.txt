@@ -49,3 +49,6 @@
   - botao
 
   
+melhorar:
+- animações
+- loader
