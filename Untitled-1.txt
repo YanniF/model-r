@@ -14,7 +14,6 @@
   - imagem do carro
   - botão seta [C]
   - info geral
-
 - página escolha (motor e cor)
   - imagem esquerda [C]
     - motor 

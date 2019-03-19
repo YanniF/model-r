@@ -1,16 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Auxiliar from '../../hoc/Auxliar/Auxiliar';
 import Options from '../../components/Engine/Options/Options';
-import Footer from '../../components/Footer/Footer';
 import style from './Engine.module.css';
 
-export class Engine extends Component {
+class Engine extends Component {
 
   state = {
     engine: null,
-    price: 0,
     selected: 1
   }
 
@@ -23,41 +20,37 @@ export class Engine extends Component {
   }
 
   optionClickedHandler = id => {
-    this.setState({ selected: id })
+    this.props.engineSelected(id);
+    this.setState({ selected: id });
+  }
+
+  buttonClickedHandler = () => {
+    this.props.history.push(this.props.match.url + '/color');
   }
 
   render() {
     let image = null;
     let options = null;
-    let footer = null;
 
     if (this.state.engine) {
       let selected = this.state.selected - 1;
 
-      image = <figure className={style.figure}><img src={this.state.engine[this.state.selected - 1].image} alt="Car" /></figure>
+      image = <figure className={style.figure}><img src={this.state.engine[selected].image} alt="Car" /></figure>
+
       options = (
-        <Options 
-          className={style.options} 
-          engineInfo={this.state.engine} 
+        <Options
+          className={style.options}
+          engineInfo={this.state.engine}
           optionClicked={this.optionClickedHandler}
           selected={this.state.selected} />
-      )
-      footer = (
-        <Footer 
-          price={this.state.price + this.state.engine[selected].price}
-          kwh={this.state.engine[selected].kwh}
-          type={this.state.engine[selected].type} />
       )
     }
 
     return (
-      <Auxiliar>
-        <section className={style.engine}>
-          {image}
-          {options}
-        </section>
-        {footer}        
-      </Auxiliar>
+      <section className={style.engine}>
+        {image}
+        {options}
+      </section>
     )
   }
 }

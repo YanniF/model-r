@@ -1,11 +1,11 @@
 .button {
   font-family: inherit;
-  font-size: inherit;
+  font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: .5rem;
   background-color: transparent;
-  border: none;
-  cursor: pointer;
+  color: var(--color-text);
+  text-decoration: none;
 }
 
 .button::after {

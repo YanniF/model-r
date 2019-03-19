@@ -8,10 +8,6 @@ import FooterItem from './Footer-item/Footer-item';
 
 const landing = props => {
 
-  const buttonClickedHandler = () => {
-    props.history.push(props.match.url + '/engine');
-  }
-
   return (
     <Auxiliar>
       <section className={style.hero}>
@@ -21,7 +17,7 @@ const landing = props => {
         </div>
         <img src={imageCar} alt="Red sports car"></img>
         <div>
-          <Button text="BEGIN" clicked={buttonClickedHandler} />
+          <Button text="BEGIN" url={props.match.url + '/custom/engine'} />
         </div>
       </section>
       <footer className={style.footer}>

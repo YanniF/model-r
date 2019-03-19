@@ -4,9 +4,10 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import Layout from './hoc/Layout/Layout';
 import Landing from './components/Landing/Landing';
 import Soon from './components/Soon/Soon';
-import Engine from './containers/Engine/Engine';
+import Customization from './containers/Customization/Customization';
 
 class App extends Component {
+
   render() {
     return (
       <BrowserRouter>
@@ -19,7 +20,7 @@ class App extends Component {
               <Route path="/mobi" component={Soon} />
               <Route path="/charlie" component={Soon} />
               <Route path="/italy" component={Soon} />
-              <Route path={'/modelr/engine'} exact component={Engine} />
+              <Route path={'/modelr/custom/:step'} exact component={Customization} />
             </Switch>
           </Layout>
         </div>

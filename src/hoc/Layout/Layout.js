@@ -5,7 +5,6 @@ import Navigation from '../../components/Navigation/Navigation';
 
 class Layout extends Component {
 
-
   render() {
     return (
       <Auxiliar>
