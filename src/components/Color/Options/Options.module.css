@@ -16,7 +16,7 @@
 }
 
 .options img {
-  border: 8px solid #eee;
+  border: 10px solid #eee;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -27,8 +27,7 @@
   align-items: center;
 }
 
-.selected {
-  border-color: var(--color-text);
+img.selected {
+  border-color: #2a2f36;
+  box-shadow: 1px 1px 10px 5px #ccc;
 }
-
-/* 88888888888888  VERIFICAR O TAMANHO DAS FONTES   88888888888888 */
