@@ -13,6 +13,7 @@ class Color extends Component {
   }
 
   componentDidMount() {
+
     axios.get('https://next.json-generator.com/api/json/get/41ORKNZDU')
       .then(res => {
         this.setState({ color: res.data.data.color.items, description: res.data.data.color.description });
@@ -30,19 +31,21 @@ class Color extends Component {
 
       image = <figure className={style.figure}><img src={this.state.color[selected].image} alt="Car" /></figure>
       details = (
-        <div>
-          <p>{this.state.color[selected].label}</p>
-          <p>{this.state.color[selected].price === 0 ? 'Included' : '+$' + this.state.color[selected].price}</p>
+        <div  className={style.details}>
+          <p className={style.label}>{this.state.color[selected].label}</p>
+          <p className={style.price}>{this.state.color[selected].price === 0 ? 'Included' : '+$' + this.state.color[selected].price}</p>
         </div>
       )
       options = <Options desc={this.state.description} />
     }
 
     return (
-      <div>
-        {image}
-        {details}
-        {options}
+      <div className={style.color}>
+        <div>
+          {image}
+          {details}
+        </div>
+          {options}
       </div>
     )
   }

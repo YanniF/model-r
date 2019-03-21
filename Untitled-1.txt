@@ -52,3 +52,4 @@
 melhorar:
 - animações
 - loader
+- classes gerais para engine e color, options
