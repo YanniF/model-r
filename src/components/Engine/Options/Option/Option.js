@@ -21,7 +21,7 @@ const Option = props => {
         miles range
       </p>
       <p className={style.select}></p>
-      <span className={style.price}>+${props.info.price}</span>
+      <span className={style.price}>+${props.info.price.toLocaleString()}</span>
     </div>
   )
 }

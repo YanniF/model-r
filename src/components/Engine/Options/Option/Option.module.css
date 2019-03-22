@@ -1,5 +1,4 @@
 .option {
-  box-sizing: border-box;
   position: relative;
   display: flex;
   justify-content: space-around;

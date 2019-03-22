@@ -1,0 +1,48 @@
+.selected, 
+.notSelected {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.selected figcaption,
+.notSelected figcaption {
+  margin-top: 2.5rem;
+}
+
+.label,
+.price {
+  font-size: 1.375rem;
+  line-height: 1.375rem;
+  text-align: center;
+}
+
+.price {
+  color: var(--color-primary);
+}
+
+.notSelected {
+  opacity: .5;
+  transition: all .3s ease-in;
+}
+
+.notSelected img {
+  width: 80%;
+  transition: all .3s ease-in;
+}
+
+.notSelected p {
+  opacity: 0;
+  transition: all .3s ease-in;
+}
+
+.notSelected:hover,
+.notSelected:hover p {
+  opacity: 1;
+}
+
+.notSelected:hover img {
+  width: 100%;
+}

@@ -16,6 +16,7 @@
 }
 
 .options img {
+  box-sizing: initial;
   border: 10px solid #eee;
   border-radius: 50%;
   cursor: pointer;

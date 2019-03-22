@@ -6,7 +6,7 @@ import Footer from '../../components/Footer/Footer';
 import Engine from './Engine/Engine';
 import Color from './Color/Color';
 import Wheels from './Wheels/Wheels';
-
+import Final from '../../components/Final/Final';
 
 class Customization extends Component {
 
@@ -48,6 +48,7 @@ class Customization extends Component {
   }
 
   render() {
+    let step = this.props.match.params.step;
     let selectedEngine = null;
     let selectedColor = null;
     let selectedWheels = null;
@@ -55,28 +56,34 @@ class Customization extends Component {
     let showPage = 'engine';
     let showColor = false;
     let showWheels = false;
+    let totalPrice = 0;
 
-    if(this.props.match.params.step === 'engine') {
+    if(step === 'engine') {
       showPage = <Engine engineSelected={this.engineSelectedHandler} />;
     }
-    else if(this.props.match.params.step === 'color') {
+    else if(step === 'color') {
       showPage = <Color colorSelected={this.colorSelectedHandler} />
       showColor = true;
     }
-    else if(this.props.match.params.step === 'wheels') {
+    else if(step === 'wheels') {
       showPage = <Wheels wheelsSelected={this.wheelsSelectedHandler} />
       showColor = true;
       showWheels = true;
     }
+    else if(step === 'final') {
+      showPage = <Final />
+    }
 
-    if (this.state.engine) {
+    if (this.state.engine && step !== 'final') {
       selectedEngine = this.state.engineSelected - 1;
       selectedColor = this.state.colorSelected - 1;
       selectedWheels = this.state.wheelsSelected - 1;
 
+      totalPrice = this.state.price + this.state.engine[selectedEngine].price + this.state.color[selectedColor].price + this.state.wheels[selectedWheels].price
+
       footer = (
         <Footer
-          price={this.state.price + this.state.engine[selectedEngine].price + this.state.color[selectedColor].price + this.state.wheels[selectedWheels].price}
+          price={totalPrice.toLocaleString()}
           kwh={this.state.engine[selectedEngine].kwh}
           type={this.state.engine[selectedEngine].type}
           color={this.state.color[selectedColor].id}

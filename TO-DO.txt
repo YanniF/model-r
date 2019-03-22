@@ -1,0 +1,7 @@
+- responsivo
+- Redux
+- animações
+- loader
+- 404
+- classes gerais para elementos que tem o mesmo estilo
+- padding engine, color containers

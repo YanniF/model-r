@@ -18,11 +18,11 @@ const footer = props => {
   else
     imageSource = red;
 
-  if(props.showColor) {
-    buttonUrl = "/modelr/custom/wheels";
+  if (props.showWheels) {
+    buttonUrl = "/modelr/custom/final";
   }
-  else if(props.showWheels) {
-    buttonUrl = "/model/final";
+  else if (props.showColor) {
+    buttonUrl = "/modelr/custom/wheels";
   }
 
   return (
@@ -31,7 +31,7 @@ const footer = props => {
       <span>Model R</span>
       <span style={{ fontWeight: 500 }}>{props.kwh} <span className={style.type}>{props.type}</span></span>
       <span className={props.showColor ? null : style.hidden}><img src={imageSource} alt="cor" /></span>
-      <span className={props.showWheels ? null : style.hidden}><img src={props.wheels} alt="wheels" /></span>
+      <span className={props.showWheels ? null : style.hidden}><img style={{ width: '3rem' }} src={props.wheels} alt="wheels" /></span>
       <Button text="NEXT" url={buttonUrl} />
     </footer>
   )
