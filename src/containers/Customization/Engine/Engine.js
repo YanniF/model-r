@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import Options from '../../components/Engine/Options/Options';
+import Options from '../../../components/Engine/Options/Options';
 import style from './Engine.module.css';
 
 class Engine extends Component {

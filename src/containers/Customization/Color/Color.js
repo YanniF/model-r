@@ -21,8 +21,9 @@ class Color extends Component {
       .catch(err => console.error(err));
   }
 
-  colorSelectedHandler = id => {
+  selectedColorHandler = id => {
     this.setState({selected: id});
+    this.props.colorSelected(id);
   }
 
   render() {
@@ -41,12 +42,12 @@ class Color extends Component {
           <p className={style.price}>{this.state.color[selected].price === 0 ? 'Included' : '+$' + this.state.color[selected].price}</p>
         </div>
       )
-      options = <Options desc={this.state.description} selected={this.state.selected} colorSelected={this.colorSelectedHandler} />
+      options = <Options desc={this.state.description} selected={this.state.selected} selectedColor={this.selectedColorHandler} />
     }
 
     return (
       <div className={style.color}>
-        <div>
+        <div style={{width: '50%'}}>
           {image}
           {details}
         </div>

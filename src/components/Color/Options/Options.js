@@ -20,7 +20,7 @@ const options = props => {
             image = (
               <img src={image} alt={alt[index]} key={index + 1} 
                 className={props.selected === index + 1 ? style.selected : null}
-                onClick={() => props.colorSelected(index + 1)}/>
+                onClick={() => props.selectedColor(index + 1)}/>
             )
           ))
         }
