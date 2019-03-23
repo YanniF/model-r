@@ -8,6 +8,12 @@
   text-decoration: none;
 }
 
+@media only screen and (max-width: 800px) {
+  .button {
+    font-size: 1.8rem;
+  }
+}
+
 .button::after {
   content: url('../../../assets/images/arrow.svg');
   position: relative;

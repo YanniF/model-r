@@ -22,3 +22,15 @@ body {
   color: var(--color-text);  
   letter-spacing: 2px;
 }
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 12px;
+  }
+}
