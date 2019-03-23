@@ -1,0 +1,86 @@
+.final {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  margin-top: -70px;
+  letter-spacing: normal;
+  opacity: 0;
+  animation: fade-in .8s ease-in forwards;
+}
+
+.final figure,
+.final .details {
+  width: 50%;
+}
+
+.final figure {
+  text-align: center;
+}
+
+.final h2 {
+  font-size: 2.8125rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+}
+
+.model {
+  color: var(--color-primary);
+}
+
+.final hr {
+  border-color: #f7f7f7;
+}
+
+.final p {
+  position: relative;
+  font-size: 1.375rem;
+  line-height: 3rem;
+}
+
+.final p span {
+  position: absolute;
+  right: 0;
+  color: var(--color-primary);
+}
+
+
+
+p.finalPrice {
+  font-size: 2rem;
+}
+
+.button {
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: .5rem;
+  background-color: transparent;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.button::after {
+  content: url('../../assets/images/rebuild.svg');
+  display: inline-block;
+  position: relative;
+  margin-left: 5px;
+  top: 3px;
+  transform-origin: center center;
+  transition: all 1s ease-in;
+}
+
+.button:hover::after {
+  transform: rotate(360deg);
+}
+
+.rebuild {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}

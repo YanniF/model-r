@@ -16,6 +16,7 @@ class Customization extends Component {
     wheels: null,
     description: null,
     price: 0,
+    results: null,
     engineSelected: 1,
     colorSelected: 1,
     wheelsSelected: 1
@@ -24,19 +25,20 @@ class Customization extends Component {
   componentDidMount() {
     axios.get('https://next.json-generator.com/api/json/get/41ORKNZDU')
       .then(res => {
-        this.setState({ 
+        this.setState({
           engine: res.data.data.engine.items,
           color: res.data.data.color.items,
           description: res.data.data.color.description,
           wheels: res.data.data.wheels.items,
           price: res.data.data.price,
+          results: res.data.data.results.items
         });
       })
       .catch(err => console.error(err));
   }
 
   engineSelectedHandler = id => {
-    this.setState({ engineSelected: id });    
+    this.setState({ engineSelected: id });
   }
 
   colorSelectedHandler = id => {
@@ -58,39 +60,50 @@ class Customization extends Component {
     let showWheels = false;
     let totalPrice = 0;
 
-    if(step === 'engine') {
-      showPage = <Engine engineSelected={this.engineSelectedHandler} />;
-    }
-    else if(step === 'color') {
-      showPage = <Color colorSelected={this.colorSelectedHandler} />
-      showColor = true;
-    }
-    else if(step === 'wheels') {
-      showPage = <Wheels wheelsSelected={this.wheelsSelectedHandler} />
-      showColor = true;
-      showWheels = true;
-    }
-    else if(step === 'final') {
-      showPage = <Final />
-    }
-
-    if (this.state.engine && step !== 'final') {
+    
+    if (this.state.engine) {
       selectedEngine = this.state.engineSelected - 1;
       selectedColor = this.state.colorSelected - 1;
       selectedWheels = this.state.wheelsSelected - 1;
 
-      totalPrice = this.state.price + this.state.engine[selectedEngine].price + this.state.color[selectedColor].price + this.state.wheels[selectedWheels].price
+      totalPrice = this.state.price + this.state.engine[selectedEngine].price + this.state.color[selectedColor].price + this.state.wheels[selectedWheels].price;
 
-      footer = (
-        <Footer
-          price={totalPrice.toLocaleString()}
-          kwh={this.state.engine[selectedEngine].kwh}
-          type={this.state.engine[selectedEngine].type}
-          color={this.state.color[selectedColor].id}
-          wheels={this.state.wheels[selectedWheels].image}
-          showColor={showColor}
-          showWheels={showWheels} />
-      )
+      if (step === 'engine') {
+        showPage = <Engine engineSelected={this.engineSelectedHandler} />;
+      }
+      else if (step === 'color') {
+        showPage = <Color colorSelected={this.colorSelectedHandler} />
+        showColor = true;
+      }
+      else if (step === 'wheels') {
+        showPage = <Wheels wheelsSelected={this.wheelsSelectedHandler} />
+        showColor = true;
+        showWheels = true;
+      }
+      else if (step === 'final') {
+        showPage = (
+          <Final 
+            image={this.state.results[selectedColor].image}
+            price={this.state.price} 
+            engine={this.state.engine[selectedEngine]}
+            color={this.state.color[selectedColor]}
+            wheels={this.state.wheels[selectedWheels]}
+            totalPrice={totalPrice} />
+        )
+      }
+
+      if(step !== 'final') {
+        footer = (
+          <Footer
+            price={totalPrice.toLocaleString()}
+            kwh={this.state.engine[selectedEngine].kwh}
+            type={this.state.engine[selectedEngine].type}
+            color={this.state.color[selectedColor].id}
+            wheels={this.state.wheels[selectedWheels].image}
+            showColor={showColor}
+            showWheels={showWheels} />
+        )
+      }      
     }
 
     return (
